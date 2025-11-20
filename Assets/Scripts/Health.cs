@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
     public Animator ani;
     public UnityEvent onDie;
     public UnityEvent<int, int> onHealthChange;
-
+    public UnityEvent onTakeDamage;
     private int _healthPointValue;
 
     public int Healthpoint
@@ -37,6 +37,7 @@ public class Health : MonoBehaviour
         Debug.Log("Damage received: " + damage);
         if (IsDead) return;
         Healthpoint -= damage;
+        onTakeDamage.Invoke();
         if (IsDead)
         {
             Die();
@@ -45,6 +46,6 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        onDie?.Invoke();
+        onDie.Invoke();
     }
 }

@@ -47,5 +47,9 @@ public class ZombieMovement : MonoBehaviour
             agent.SetDestination(playerfoot.position);
         }
     }
-
+    public void OnDie()
+    {
+        enabled = false;
+        agent.isStopped = true;
+    }
 }
