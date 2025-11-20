@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 602274619}
   - component: {fileID: 602274621}
   - component: {fileID: 602274620}
-  - component: {fileID: 602274618}
+  - component: {fileID: 602274622}
   m_Layer: 5
   m_Name: LoaddingBar
   m_TagString: Untagged
@@ -216,21 +216,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &602274618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 602274617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a745288e3ef2a744c881850846ee10af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 602274619}
-  Mask: {fileID: 1991781665}
-  ImageProgress: {fileID: 2144349113}
 --- !u!224 &602274619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -289,6 +274,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602274617}
   m_CullTransparentMesh: 1
+--- !u!114 &602274622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602274617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a745288e3ef2a744c881850846ee10af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 602274619}
+  Mask: {fileID: 1991781665}
+  ImageProgress: {fileID: 2144349113}
 --- !u!1 &606451850
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1012932401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,9 +762,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689f014dd2880764fac43daf291b7a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressbar: {fileID: 602274618}
+  progressbar: {fileID: 602274622}
   scenename: ShootingRange
-  fakeDuration: 3
+  fakeDuration: 10
 --- !u!1 &1394475812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,8 +1090,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2.522705}
-  m_SizeDelta: {x: 1920, y: 34.101}
+  m_AnchoredPosition: {x: 0, y: -0.00001359}
+  m_SizeDelta: {x: 1920, y: 39.147}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1991781666
 MonoBehaviour:
