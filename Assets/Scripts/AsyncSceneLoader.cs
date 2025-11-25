@@ -23,7 +23,7 @@ public class AsyncSceneLoader : MonoBehaviour
     private void Update()
     {
         if (loaddingOperation == null) return;
-        float fakeProgress = (Time.unscaledDeltaTime - Starttime) / fakeDuration;
+        float fakeProgress = (Time.unscaledTime - Starttime) / fakeDuration;
         float finalProgress = Mathf.Min(fakeProgress, loaddingOperation.progress);
         progressbar.SetProgressValue(finalProgress);
         if(loaddingOperation.isDone && finalProgress >= 1)

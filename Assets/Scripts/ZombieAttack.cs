@@ -17,6 +17,10 @@ public class ZombieAttack : MonoBehaviour
     {
         ani.SetBool("IsAttacking", false);
     }
+    private void Start()
+    {
+        Playerhealth = Player.Instance.health;
+    }
     public void OnAttack(int index)
     {
         Playerhealth.TakeDamage(damage);
