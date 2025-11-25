@@ -6,7 +6,7 @@ public class ZombieHealth : Health
 {
     protected override void Die()
     {
-        base.Die();
-     ZombieMovement.Instantiate(this);
+     base.Die();
+       ZombieManager.Instance.NotifyZombieKilled(gameObject);
     }
 }
