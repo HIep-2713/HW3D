@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-   
-    void Start()
+    private bool isLockedValue;
+    public bool IsLocked 
     {
-        
+        get => isLockedValue;
+            set
+        {
+            isLockedValue = value;
+            enabled = !isLockedValue;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

@@ -37,24 +37,23 @@ public class GunAmo : Shooting
 
     private void Update()
     {
-       
-        if (Input.GetKeyDown(KeyCode.R) && !isReloading && LoadedAmo < magsize)
-        {
-            StartReload();
-        }
 
-       
         if (isReloading)
         {
             reloadTimer += Time.deltaTime;
+
             if (reloadTimer >= reloadTime)
             {
                 FinishReload();
             }
         }
     }
+    public void Reload()
+    {
+        if (!isReloading && _LoadedAmo < magsize)
+            StartReload();
+    }
 
-  
     public void SingleFireAmmoCouter()
     {
         if (!isReloading && _LoadedAmo > 0)
@@ -86,14 +85,12 @@ public class GunAmo : Shooting
 
     private void LockShooting()
     {
-        if (shooting != null)
-            shooting.enabled = false;
+        shooting.IsLocked = true;
     }
 
     private void UnlockShooting()
     {
-        if (shooting != null)
-            shooting.enabled = true;
+        shooting.IsLocked = false;
     }
 
     public void OnSeclected()

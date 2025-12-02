@@ -11,13 +11,14 @@ public class GernadeLaucher : Shooting
     public AudioSource ShootingSound;
     public Animator ani;
 
-    // Update is called once per frame
-    void Update()
+   
+    public void Shoot()
     {
-        if (Input.GetMouseButtonDown(LeftButtonMouse))
+        if (!IsLocked)
         {
-            AddProjectile();
+            ShootBullet();
         }
+
     }
     private void ShootBullet()
     {

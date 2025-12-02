@@ -8,30 +8,33 @@ public class AutoMaticShooting : Shooting
 {
     public Animator ani;
     public int rpm;
-    //public GameObject hitMarkerPrefad;
-    //public Camera cam;
-    //public LayerMask layerMask;
+    
     public AudioSource FireSound;
    private float interval;
     private float lastshoot;
     public UnityEvent onShoot;
     public RunRayCaster rayCaster;
-    // Start is called before the first frame update
+    private bool isShooting;
     void Start()
     {
         interval = 60 / rpm;
     }
 
-    // Update is called once per frame
+    public void StarShooting()
+    {
+        isShooting = true;
+    }
+    public void StopShooting()
+    {
+        isShooting=false;
+    }
     void Update()
     {
-        if(Input.GetMouseButton(0))
-        {
-            Updatefiring();
-        }
+        Updatefiring();
     }
     void Updatefiring()
     {
+        if (!isShooting) return;
         if (Time.time - lastshoot >= interval)
         {
             Shoot();

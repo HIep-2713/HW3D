@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class GunSwitcher : MonoBehaviour
 {
+    private int currentIndex;
     public GameObject[] guns; 
     
     // Update is called once per frame
-    void Update()
+    public void SwitchGun()
     {
-        for (int i = 0; i < guns.Length; i++)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1 + i)
-                ||Input.GetKeyDown(KeyCode.Keypad1 + i))
-            {
-                SetActiveGun(i);
-            }
-        }
+        currentIndex = ( currentIndex + 1 ) % guns.Length;
+        SetActiveGun(currentIndex);
     }
     void SetActiveGun(int gunIndex)
     {
